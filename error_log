@@ -1,0 +1,381 @@
+[24-Aug-2023 08:54:39 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[06-Oct-2023 09:50:47 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[28-Nov-2023 07:25:06 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[28-Nov-2023 16:49:05 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: Creation of dynamic property CodeIgniter\Debug\Exceptions::$formatter is deprecated in /home/lspmicro/public_html/system/API/ResponseTrait.php:404
+Stack trace:
+#0 /home/lspmicro/public_html/system/API/ResponseTrait.php(404): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/API/ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format()
+#2 /home/lspmicro/public_html/system/Debug/Exceptions.php(166): CodeIgniter\Debug\Exceptions->respond()
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#4 {main}
+  thrown in /home/lspmicro/public_html/system/API/ResponseTrait.php on line 404
+[28-Nov-2023 16:49:16 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: Creation of dynamic property CodeIgniter\Debug\Exceptions::$formatter is deprecated in /home/lspmicro/public_html/system/API/ResponseTrait.php:404
+Stack trace:
+#0 /home/lspmicro/public_html/system/API/ResponseTrait.php(404): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/API/ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format()
+#2 /home/lspmicro/public_html/system/Debug/Exceptions.php(166): CodeIgniter\Debug\Exceptions->respond()
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#4 {main}
+  thrown in /home/lspmicro/public_html/system/API/ResponseTrait.php on line 404
+[28-Nov-2023 17:46:07 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: Creation of dynamic property CodeIgniter\Debug\Exceptions::$formatter is deprecated in /home/lspmicro/public_html/system/API/ResponseTrait.php:404
+Stack trace:
+#0 /home/lspmicro/public_html/system/API/ResponseTrait.php(404): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/API/ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format()
+#2 /home/lspmicro/public_html/system/Debug/Exceptions.php(166): CodeIgniter\Debug\Exceptions->respond()
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#4 {main}
+  thrown in /home/lspmicro/public_html/system/API/ResponseTrait.php on line 404
+[28-Nov-2023 20:46:35 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[28-Nov-2023 20:46:36 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[28-Nov-2023 22:22:57 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 00:00:32 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 00:32:07 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: Creation of dynamic property CodeIgniter\Debug\Exceptions::$formatter is deprecated in /home/lspmicro/public_html/system/API/ResponseTrait.php:404
+Stack trace:
+#0 /home/lspmicro/public_html/system/API/ResponseTrait.php(404): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/API/ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format()
+#2 /home/lspmicro/public_html/system/Debug/Exceptions.php(166): CodeIgniter\Debug\Exceptions->respond()
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#4 {main}
+  thrown in /home/lspmicro/public_html/system/API/ResponseTrait.php on line 404
+[29-Nov-2023 00:32:11 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: Creation of dynamic property CodeIgniter\Debug\Exceptions::$formatter is deprecated in /home/lspmicro/public_html/system/API/ResponseTrait.php:404
+Stack trace:
+#0 /home/lspmicro/public_html/system/API/ResponseTrait.php(404): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/API/ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format()
+#2 /home/lspmicro/public_html/system/Debug/Exceptions.php(166): CodeIgniter\Debug\Exceptions->respond()
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#4 {main}
+  thrown in /home/lspmicro/public_html/system/API/ResponseTrait.php on line 404
+[29-Nov-2023 01:42:42 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 01:54:14 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: Creation of dynamic property CodeIgniter\Debug\Exceptions::$formatter is deprecated in /home/lspmicro/public_html/system/API/ResponseTrait.php:404
+Stack trace:
+#0 /home/lspmicro/public_html/system/API/ResponseTrait.php(404): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/API/ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format()
+#2 /home/lspmicro/public_html/system/Debug/Exceptions.php(166): CodeIgniter\Debug\Exceptions->respond()
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#4 {main}
+  thrown in /home/lspmicro/public_html/system/API/ResponseTrait.php on line 404
+[29-Nov-2023 03:28:39 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 03:29:34 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: Creation of dynamic property CodeIgniter\Debug\Exceptions::$formatter is deprecated in /home/lspmicro/public_html/system/API/ResponseTrait.php:404
+Stack trace:
+#0 /home/lspmicro/public_html/system/API/ResponseTrait.php(404): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/API/ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format()
+#2 /home/lspmicro/public_html/system/Debug/Exceptions.php(166): CodeIgniter\Debug\Exceptions->respond()
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#4 {main}
+  thrown in /home/lspmicro/public_html/system/API/ResponseTrait.php on line 404
+[29-Nov-2023 03:30:13 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: Creation of dynamic property CodeIgniter\Debug\Exceptions::$formatter is deprecated in /home/lspmicro/public_html/system/API/ResponseTrait.php:404
+Stack trace:
+#0 /home/lspmicro/public_html/system/API/ResponseTrait.php(404): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/API/ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format()
+#2 /home/lspmicro/public_html/system/Debug/Exceptions.php(166): CodeIgniter\Debug\Exceptions->respond()
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#4 {main}
+  thrown in /home/lspmicro/public_html/system/API/ResponseTrait.php on line 404
+[29-Nov-2023 07:51:47 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 07:51:51 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 07:51:52 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 07:51:53 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 07:51:54 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 07:51:55 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 07:51:56 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 07:52:15 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 07:52:44 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 07:53:00 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 07:53:00 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 07:59:17 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 08:05:52 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 08:07:18 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 08:07:21 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 08:07:23 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/lspmicro/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/lspmicro/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/lspmicro/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/lspmicro/public_html/app/Views/errors/html/error_exception.php(210): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/lspmicro/public_html/system/Debug/Exceptions.php(299): include('/home/lspmicro/...')
+#6 /home/lspmicro/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown in /home/lspmicro/public_html/system/HTTP/Request.php on line 429
+[29-Nov-2023 08:16:29 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: Creation of dynamic property CodeIgniter\Debug\Exceptions::$formatter is deprecated in /home/lspmicro/public_html/system/API/ResponseTrait.php:404
+Stack trace:
+#0 /home/lspmicro/public_html/system/API/ResponseTrait.php(404): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/API/ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format()
+#2 /home/lspmicro/public_html/system/Debug/Exceptions.php(166): CodeIgniter\Debug\Exceptions->respond()
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#4 {main}
+  thrown in /home/lspmicro/public_html/system/API/ResponseTrait.php on line 404
+[29-Nov-2023 08:16:34 Asia/Jakarta] PHP Fatal error:  Uncaught ErrorException: Creation of dynamic property CodeIgniter\Debug\Exceptions::$formatter is deprecated in /home/lspmicro/public_html/system/API/ResponseTrait.php:404
+Stack trace:
+#0 /home/lspmicro/public_html/system/API/ResponseTrait.php(404): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/lspmicro/public_html/system/API/ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format()
+#2 /home/lspmicro/public_html/system/Debug/Exceptions.php(166): CodeIgniter\Debug\Exceptions->respond()
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#4 {main}
+  thrown in /home/lspmicro/public_html/system/API/ResponseTrait.php on line 404
+[11-Jun-2024 14:23:04 UTC] PHP Notice:  Undefined variable: image in /home/lspmicro/public_html/home.php on line 2

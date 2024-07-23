@@ -1,0 +1,749 @@
+<?php defined('SYSPATH') or die('No direct script access.');
+class Controller_Magazine extends Controller_Backend {
+
+	private $custom_header_form;
+
+	private $custom_footer_form;
+
+	public function before() {
+
+		parent::before();
+
+		// Header Multiple SElect
+		$this->custom_header_form = '
+			<link rel="stylesheet" href="/assets/plugins/select2/select2.min.css">
+			<link rel="stylesheet" href="/assets/dist/css/AdminLTE.min.css">
+		';
+
+		// Custom header for daterangepicker
+		$this->custom_header_form .= '<link rel="stylesheet" href="/assets/plugins/daterangepicker/daterangepicker-bs3.css">';
+
+		// Tinymce
+		$this->custom_footer_form = '
+			<script src="/assets/tinymce/tinymce.min.js"></script>
+			<script>
+				$(function() {
+					$(\'#publish_time\').daterangepicker({
+						format: \'DD/MM/YYYY HH:mm:ss\',
+						timePicker: true,
+						singleDatePicker: true,
+						timePickerIncrement: 1,
+						timePicker12Hour: false,
+						//minDate: \'' . date('d-m-Y H:i:s') . '\'
+					});
+				});
+				tinymce.init({
+					paste_data_images: true,
+					valid_elements : \'*[*]\',
+					selector: \'.f_tinymce\',
+					theme: \'modern\',
+                    templates: [{title: \'Berita Lainnya\', description: \'Berita Lainnya\', url: \'/template/terkait.html\'},{title: \'Button Selengkapnya\', description: \'Button Selengkapnya\', url: \'/template/selengkapnya.html\'},{title: \'Sharing\', description: \'Sharing Information\', url: \'/template/sharing.html\'},{title: \'Mutiara\', description: \'Informasi Mutiara\', url: \'/template/komunitas.html\'},{title: \'Download Arena\', description: \'Link Download Aplikasi Arena\', url: \'/template/arena.html\'}],
+					plugins: [
+						\'example advlist autolink lists link image charmap print preview hr anchor pagebreak\',
+						\'searchreplace wordcount visualblocks visualchars code fullscreen\',
+						\'insertdatetime media nonbreaking save table contextmenu directionality\',
+						\'emoticons template paste textcolor colorpicker textpattern imagetools\'
+					],
+					toolbar1: \'insertfile undo redo | styleselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image\',
+					toolbar2: \'fullscreen preview media | forecolor backcolor emoticons | pagebreak | my_image\',
+					image_advtab: true,
+                                        pagebreak_separator: "<!--PAGE_SEPARATOR-->",
+                                        pagebreak_split_block: true,
+                                        setup: function (editor) {
+                                        editor.addButton(\'my_image\', {
+                                            text: \'Add Image From Gallery\',
+                                            icon: false,
+                                            onclick: function () {
+                                                open_popup_img_tmce();
+                                            }
+                                        });
+                                      },
+				});
+			</script>
+		';
+
+		// Multiple SElect
+		$this->custom_footer_form .= '
+			<script src="/assets/plugins/select2/select2.full.min.js"></script>
+			<script>
+				$(".select2").select2();
+			</script>
+		';
+
+		// Custom footer for daterangepicker
+		$this->custom_footer_form .= '
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+			<script src="/assets/plugins/daterangepicker/daterangepicker.js"></script>
+			<!--Tinymce hidden for append image textarea-->
+			<input type="hidden" id="image_popup_tmce" />
+			<script>
+				function open_popup_img() {
+					PopupCenter("/library/index/1/0/image_popup", "google", "840", "576");
+				}
+
+				function open_popup_img_tmce() {
+					PopupCenter("/library/index/1/0/image_popup_tmce", "google", "640", "480");
+				}
+
+				function image_popup_tmce() {
+					var str = $(\'#image_popup_tmce\').val();
+					var n = str.lastIndexOf(".");
+					var res = str.substring(0, n)+"_512x351"+str.substring(n);
+					tinyMCE.activeEditor.insertContent(\'<img src="\' + res + \'" width="100%" />\');
+				}
+
+				function image_popup() {
+					$(\'#previewImage\').html(\'\');
+					$(\'#previewImage\').append(\'<div style=" position: absolute; width: 20px; height: 20px; left: 186px; margin-top: 4px; background-color: rgb(255, 0, 0); "><center><span style="color: #FFFFFF;cursor: pointer;" onclick="javascript:delPreview();">X</span></center></div>\');
+					$(\'#previewImage\').append(\'<img src="\' + $(\'#image_popup\').val() + \'" style="width:200px;"/>\');
+				}
+
+				function delPreview() {
+					$(\'#previewImage\').html(\'\');
+					$(\'#image_popup\').val(\'\');
+				}
+                
+                $(\'.refresh_tags\').click(function() {
+                    $(this).html(\'Loading ...\');
+                    $(\'select[name="tags[]"]\').empty();
+
+                    $.getJSON( "/tags/ajax", function( data ) {
+                        $.each( data, function( key, val ) {
+                            $(\'select[name="tags[]"]\').append(\'<option value="\' + val.id + \'">\' + val.name + \'</option>\')
+                        }, chlabel());
+                    });
+                })
+
+                $(document).ready(function(){
+                    //$(\'select[name="tags[]"]\').empty();
+                    ajax_tags()
+                });
+
+                $(\'select[name="tags[]"]\').change(function() {ajax_tags()})
+
+                function ajax_tags() {
+                    $(\'.select2-search__field\').on("keyup", function(e){
+                        if (e.which <= 90 && e.which >= 48) {
+                            var str = $(\'.select2-search__field\').val();
+                            var n = str.length;
+                            if(n >= 2) {
+                                $(\'.refresh_tags\').html(\'Loading ...\');
+                                console.log("Ajax Search : " + $(\'.select2-search__field\').val());
+                                $.getJSON( "/tags/ajax/" + $(\'.select2-search__field\').val(), function( data ) {
+                                    var arrJs = [];
+                                    $(\'select[name="tags[]"] option\').each(function() {
+                                        arrJs.push($(this).val())
+                                    });
+                                    $.each( data, function( key, val ) {
+                                        var id_data = val.id;
+                                        var sid_data = id_data.toString();
+                                        if(arrJs.indexOf(sid_data) == -1) {
+                                            $(\'select[name="tags[]"]\').append(\'<option value="\' + val.id + \'">\' + val.name + \'</option>\')
+                                        }
+                                    }, chlabel());
+                                });
+                            }
+                        }
+                    })
+                }
+
+                // Jika Diakses dari mobile
+                if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                    var oldData = "";
+                    setInterval(function(){
+                        var newData = $(\'.select2-search__field\').val();
+                        if(oldData != newData) {
+                            oldData = newData
+                            var n = newData.length;
+                            if(n >= 3) {
+                                $(\'.refresh_tags\').html(\'Loading ...\');
+                                console.log("Ajax Search : " + $(\'.select2-search__field\').val());
+                                $.getJSON( "/tags/ajax/" + $(\'.select2-search__field\').val(), function( data ) {
+                                    var arrJs = [];
+                                    $(\'select[name="tags[]"] option\').each(function() {
+                                        arrJs.push($(this).val())
+                                    });
+                                    $.each( data, function( key, val ) {
+                                        var id_data = val.id;
+                                        var sid_data = id_data.toString();
+                                        if(arrJs.indexOf(sid_data) == -1) {
+                                            $(\'select[name="tags[]"]\').append(\'<option value="\' + val.id + \'">\' + val.name + \'</option>\')
+                                        }
+                                    }, chlabel());
+                                });
+                            }
+                        }
+                    }, 500);
+                }
+
+                function chlabel() {
+                    $(\'.refresh_tags\').html(\'( Click Here For Refresh Tags )\');
+                }
+
+			</script>
+		';
+
+	}
+
+	public function action_index() {
+		// Redirect
+		$this->redirect('/magazine/search');
+	}
+
+	
+	public function action_category()
+	{
+		$session = Session::instance();
+		$data['main_title'] = __('Category List');
+		$data['menu_active'] = 'magazine';
+		$data['menu_active_child'] = 'category';
+		$data['menu_active_child_1'] = 'list';
+		// Yes No Confirm
+		$data['custom_footer'] = '';
+		if(isset($_POST['version'])) $session->set('version_news', $_POST['version']);
+		$data['version'] = $version = $session->get("version_news", "");
+		if(isset($_POST['search'])) $session->set('search_category', $_POST['search']);
+		$data['search'] = $search = $session->get("search_category", "");
+		
+		// Page
+		$page = intval($this->request->param('page'));
+		if(empty($page)) {
+			$page = 1;
+		}
+
+
+		// Load model
+		$magazine_model = new Model_Magazine();
+
+		// Count all data
+		$count_all = $magazine_model->count_search();
+		$data['count_all'] = $count_all;
+		$data['custom_footer'] .= '
+			<script type="text/javascript">
+				function del_confirm(id) {
+					var dialog = confirm("' . __('Are you sure for delete this data ?') . '");
+					if (dialog == true) {
+						window.location.href="' . URL::Base() . 'magazine/delete_category/" + id;
+					}
+				}
+			</script>
+		';
+		// Pagination
+		$pagination = 	Pagination::factory(array(
+							'total_items'    		=> $count_all,
+							'items_per_page'		=> 20,
+							'current_page'			=> $page,
+							'base_url'				=> '/magazine/category/',
+							'view'					=> 'pagination/admin'
+							// 'suffix'				=> '?date_range=' . $date_range,
+						));
+
+		$data['list'] = $magazine_model->list_search($search,$pagination->items_per_page, $pagination->offset);
+
+		$data['pagination'] = $pagination->render();
+
+		// print_r($data['list']);exit;
+
+		// Session
+		$data['session_user_id'] = $session->get('user_id');
+
+		$view = Briliant::admin_template('magazine/' . Kohana::$config->load('path.main_template') . '/category', $data);
+
+		$this->response->body($view);
+	}
+
+	public function action_form_category() {
+		$data['main_title'] = __('Category | Add New Data');
+		$data['menu_active'] = 'magazine';
+		$data['menu_active_child'] = 'category';
+		$data['menu_active_child_1'] = 'add category';
+		$data['form'] = "Add Category";
+		$id = $this->request->param('id');
+		if(!empty($id)){
+			$data['form'] = "Edit Category";
+			$data['menu_active_child_1'] = '';
+			$magazine_model = new Model_Magazine();
+
+			// Detail Data
+			$category_detail = $magazine_model->detail_data($id);
+
+			$data['detail'] = $category_detail;
+		}
+		$data['custom_header'] = $this->custom_header_form;
+		$data['custom_footer'] = $this->custom_footer_form;
+		$view = Briliant::admin_template('magazine/' . Kohana::$config->load('path.main_template') . '/form_category', $data);
+		$this->response->body($view);
+	}
+
+	public function action_proces_category()
+	{
+		$session = Session::instance();
+		$post = $this->request->post();
+		// Validation
+		$validation = Magazine::validation($post);
+		if($validation !== TRUE) { // Error Validation
+
+			$error = $validation;
+			$session = Session::instance();
+            $session->set('error', $error);
+			$data['post'] = $this->request->post();
+			$this->redirect('/magazine/new_category',302);
+		} else { // Validation Success
+
+			// Get user id from session
+
+			$user_id = $session->get('adminId');
+
+			// Load Model
+			$magazine_model = new Model_Magazine();
+			// print_r($post);
+			// exit;
+			// Save data
+			if(empty($post['id'])){
+				$save_data = $magazine_model->save_data($this->request->post(), $user_id);
+			}else{
+				$save_data = $magazine_model->update_data($this->request->post(), $user_id);
+			}
+			$this->redirect('/magazine/category');
+		}
+	}
+
+	public function action_delete_category() {
+
+		// ID Parameter
+		$id = $this->request->param('id');
+
+		// Get user id from session
+		$session = Session::instance();
+		$user_id = $session->get('adminId');
+
+		// Load Model
+		$magazine_model = new Model_Magazine();
+
+		// Change status to 0
+		$magazine_model->delete_data($id);
+
+		// Redirect
+		$this->redirect('/magazine/category');
+
+	}
+
+	// MAGAZINE
+	public function action_search() {
+		// $im = Kohana_Image_Imagick::check();
+		// var_dump($im);
+		// exit;
+		$session = Session::instance();
+
+		if(isset($_POST['version'])) $session->set('version_magz', $_POST['version']);
+		$data['version'] = $version = $session->get("version_magz", "");
+
+		if(isset($_POST['publisher'])) $session->set('publish_magz', $_POST['publisher']);
+		$data['publish'] = $publish = $session->get("publish_magz", "magazinePublishTime");
+
+		if(isset($_POST['search'])) $session->set('search_magz', $_POST['search']);
+		$data['search'] = $search = $session->get("search_magz", "");
+
+		if(isset($_GET['date_range'])) $session->set('date_range_magz', $_GET['date_range']);
+		$data['date_range'] = $date_range = $session->get("date_range_magz", "");
+
+		// print_r($_GET);exit();
+
+		$data['main_title'] = __('Magazine List');
+		$data['menu_active'] = 'magazine';
+		$data['menu_active_child'] = 'magazine';
+		$data['menu_active_child_1'] = 'list';
+
+		// Redirect jika mengepost search agar bisa menggunakan paginasi dengan beauty url
+		// $post_search = $this->request->post('search');
+
+		/* if(!empty($post_search)) {
+			$this->redirect('converence/search/' . base64_encode($post_search) . '/?date_range=' . $date_range);
+		} */
+
+		// Param search
+		// $data['search'] = $search = base64_decode($this->request->param('search'));
+
+		// Custom header for daterangepicker
+		$data['custom_header'] = '<link rel="stylesheet" href="/assets/plugins/daterangepicker/daterangepicker-bs3.css">';
+
+		// Custom footer for daterangepicker
+		$data['custom_footer'] = '
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+			<script src="/assets/plugins/daterangepicker/daterangepicker.js"></script>
+			<script>
+				//Date range picker
+				$(function() {
+					$(\'#reservation\').daterangepicker(
+						{
+							format: \'DD/MM/YYYY\'
+						}, function (start, end) {
+							window.location = "' . URL::Base() . 'magazine/search/?date_range=" + $(\'#reservation\').val();
+						}
+					);
+				});
+			</script>
+		';
+
+		// Yes No Confirm
+		$data['custom_footer'] .= '
+			<script type="text/javascript">
+				function del_confirm(id) {
+					var dialog = confirm("' . __('Are you sure for delete this data ?') . '");
+					if (dialog == true) {
+						window.location.href="' . URL::Base() . 'magazine/delete/" + id;
+					}
+				}
+			</script>
+		';
+
+		// Date parameter
+		/* $date_range = $this->request->post('date_range');
+		$date_range = !empty($_GET['date_range']) ? $_GET['date_range'] : $date_range; */
+		if(empty($date_range)) {
+			//$date1 = date('Y-m-d');
+			$date1 = '2001-01-01';
+            $date2 = date('Y-m-d');
+		} else {
+			$ex_range = explode(' - ', $date_range);
+			if(!empty($ex_range)) {
+				$date1 = DateTime::createFromFormat('d/m/Y', $ex_range[0]);
+				$date1 = $date1->format('Y-m-d');
+				$date2 = DateTime::createFromFormat('d/m/Y', $ex_range[1]);
+				$date2 = $date2->format('Y-m-d');
+			}
+		}
+
+		// Date adding time
+		$date1 = $date1 . ' 00:00:00';
+		$date2 = $date2 . ' 00:00:00';
+
+		// Page
+		$page = intval($this->request->param('page'));
+		if(empty($page)) {
+			$page = 1;
+		}
+
+		// $user_model = new Model_User();
+        // $data['all_user'] = $user_model->list_all();
+
+		// Load model
+		$magazine_model = new Model_Magazine();
+
+		// Count all data
+		$count_all = $magazine_model->count_search_magazine($date1, $date2, $search);
+		$data['count_all'] = $count_all;
+
+		// Pagination
+		$pagination = 	Pagination::factory(array(
+							'total_items'    		=> $count_all,
+							'items_per_page'		=> 20,
+							'current_page'			=> $page,
+							'base_url'				=> '/magazine/search/',
+							'view'					=> 'pagination/admin'
+							// 'suffix'				=> '?date_range=' . $date_range,
+						));
+
+		$data['list'] = $magazine_model->list_search_magazine($date1, $date2, $search, $pagination->items_per_page, $pagination->offset);
+
+		$data['pagination'] = $pagination->render();
+
+		// print_r($data['list']);exit;
+
+		// Session
+		$data['session_user_id'] = $session->get('user_id');
+
+		$view = Briliant::admin_template('magazine/' . Kohana::$config->load('path.main_template') . '/magazine', $data);
+
+		$this->response->body($view);
+
+	}
+
+	public function action_new() {
+		$data['main_title'] = __('Magazine | Add New Data');
+		$data['menu_active'] = 'magazine';
+		$data['menu_active_child'] = 'magazine';
+		$data['menu_active_child_1'] = 'add';
+
+		$data['custom_header'] = $this->custom_header_form;
+		$data['custom_footer'] = $this->custom_footer_form;
+
+		$data['custom_footer'] .=  '
+			<script type="text/javascript">
+				function checkValid(){
+					var magazine = document.getElementById("magazine").value;
+					var img = document.getElementById("image_popup").value;
+					var detail = document.getElementById("wysiwyg").value;
+					if(magazine == "" || magazine === undefined){
+						alert("belum memilih file");
+						return false;
+					}
+					if(img == "" || img === undefined){
+						alert("belum memilih Gambar");
+						return false;
+					}
+					if(detail == "" || detail === undefined){
+						alert("detail belum diisi");
+						return false;
+					}
+				}
+			</script>
+		';
+		$magazine_model =  new Model_Magazine();
+		$data['list'] = $magazine_model->list_category();
+		$view = Briliant::admin_template('magazine/' . Kohana::$config->load('path.main_template') . '/new', $data);
+		$this->response->body($view);
+	}
+
+	public function action_save() {
+		// print_r($this->request->post());exit;
+		$session = Session::instance();
+
+		// Validation
+		$validation = Magazine::validation_magazine($this->request->post());
+
+		if($validation !== TRUE) { // Error Validation
+			$error = $validation;
+			$session = Session::instance();
+            $session->set('error', $error);
+			$data['post'] = $this->request->post();
+			$this->redirect('/magazine/search',302);
+		} else { // Validation Success
+
+			// Get user id from session
+
+			$user_id = $session->get('adminId');
+
+			// Load Model
+			$magazine_model = new Model_Magazine();
+			$post = $this->request->post();
+			$post['name_file'] = $_FILES['file_pdf']['name'];
+			$file = $_FILES['file_pdf'];
+			$path = date("Y/m/d/H/i"); 
+			if(!is_dir("uploads/pdf/$path")) {
+				mkdir("uploads/pdf/$path", 0777, true);
+			}
+			$target= "uploads/pdf/$path/".basename($_FILES['file_pdf']['name']);
+			if(move_uploaded_file($_FILES['file_pdf']['tmp_name'],$target)) {
+				$post['path'] ="$target";
+			}
+			// Save data
+			$save_data = $magazine_model->save_magazine($post, $user_id);
+
+			$this->redirect('/magazine/search');
+		}
+
+	}
+
+	public function action_edit() {
+		$session = Session::instance();
+
+		$data['main_title'] = __('E-Magazine | Edit Data');
+		$data['menu_active'] = 'magazine';
+		$data['menu_active_child'] = 'magazine';
+
+		$data['custom_header'] = $this->custom_header_form;
+		$data['custom_footer'] = $this->custom_footer_form;
+
+		// Paramter ID
+		$id = $this->request->param('id');
+
+		// Get user id from session
+		$user_id = $session->get('adminId');
+
+		// Load Model
+		$magazine_model = new Model_Magazine();
+
+		// Detail Data
+		$magazine_model = $magazine_model->detail_data_magazine($id);
+
+		$data['detail'] = $magazine_model;
+		$data['detail']['publishTime'] = date("d/m/Y H:i:s", strtotime($data['detail']['publishTime']));
+		$view = Briliant::admin_template('magazine/' . Kohana::$config->load('path.main_template') . '/edit', $data);
+		$this->response->body($view);
+
+	}
+
+	public function action_update() {
+
+		// Get user id from session
+		$session = Session::instance();
+		$user_id = $session->get('adminId');
+
+		// Check permission data
+		$id_parameter = $this->request->post('id');
+
+		// Validation
+		$validation = Magazine::validation_magazine($this->request->post());
+
+		if($validation !== TRUE) { // Error Validation
+
+			$error = $validation;
+			$session = Session::instance();
+            $session->set('error', $error);
+			$data['post'] = $this->request->post();
+			$this->redirect('/magazine/search',302);
+
+		} else { // Validation Success
+
+			// Load Model
+			$magazine_model = new Model_Magazine();
+			$post = $this->request->post();
+			if(!empty($_FILES['file_pdf']['name'])){
+				$old_path = $post['old_path'];
+				$post['name_file'] = $_FILES['file_pdf']['name'];
+				$file = $_FILES['file_pdf'];
+				
+				$path = date("Y/m/d/H/i"); 
+				if(!is_dir("uploads/pdf/$path")) {
+					mkdir("uploads/pdf/$path", 0777, true);
+				}
+				$target= "uploads/pdf/$path/".basename($_FILES['file_pdf']['name']);
+				if(move_uploaded_file($_FILES['file_pdf']['tmp_name'],$target)) {
+					$post['path'] ="$target";
+				}
+
+				$this->unlink($old_path);
+			}
+			// print_r($post);
+			// 	exit;
+			// Update Data
+			$update_data = $magazine_model->update_data_magazine($post, $user_id);
+
+			$this->redirect('/magazine/search');
+
+		}
+
+	}
+
+	// unlink
+	function unlink($old_path)
+    {
+		$directory = DOCROOT."$old_path";
+        unlink($directory);
+    }
+
+	public function action_detail() {
+		$session = Session::instance();
+
+		$data['main_title'] = __('Magazine | Detail');
+		$data['menu_active'] = 'magazine';
+		$data['menu_active_child'] = 'magazine';
+
+		$id = $this->request->param('id');
+
+		// Load model
+		$magazine_model = new Model_Magazine();
+
+		// Detail data
+		$data['detail'] = $magazine_model->detail_data_magazine($id);
+
+		$member = $session->get('member');
+		$view = Briliant::admin_template('magazine/' . Kohana::$config->load('path.main_template') . '/detail', $data);
+		$this->response->body($view);
+
+	}
+
+	protected function base64_to_jpeg_and_save_image($param, $base64_string) {
+		// open the output file for writing
+		$output_file = getcwd()."/uploads/editor/temp.jpg";
+		$ifp = fopen( $output_file, 'wb' );
+
+		// split the string on commas
+		// $data[ 0 ] == "data:image/png;base64"
+		// $data[ 1 ] == <actual base64 string>
+		$data = explode( ',', $base64_string );
+
+		// we could add validation here with ensuring count( $data ) > 1
+		fwrite( $ifp, base64_decode( $data[ 1 ] ) );
+
+		// clean up the file resource
+		fclose( $ifp );
+
+		$param['fileType'] = $imageFileType = "jpg";
+
+		$library_model = new Model_Library();
+		$arimId = $library_model->save_data($param);
+		if(empty($arimId)) return FALSE;
+
+		$directory = DOCROOT.'uploads/library';
+		$arimId_arr = str_split($arimId);
+		foreach($arimId_arr as $v){
+			$directory.="/{$v}";
+			if(!is_dir($directory)) mkdir($directory, 0777);
+		}
+
+		$filename = "{$arimId}.{$imageFileType}";
+        if (copy($output_file, $directory."/".$filename)){
+            return $this->_resize($imageFileType, $directory, $arimId);
+        }
+        return FALSE;
+	}
+
+	protected function _resize($imageFileType, $directory, $arimId) {
+		$filename = "{$arimId}.{$imageFileType}";
+		$file = "{$directory}/{$filename}";
+
+		$size_image = array();
+		$size_image[] = array(512, 351);
+		$size_image[] = array(300, 206);
+		$size_image[] = array(224, 153);
+		$size_image[] = array(263, 180);
+
+		if($imageFileType=='gif'){
+			$filenameJPG = "{$arimId}_683x468.jpg";
+			Image::factory($file)->resize(683, 468, Image::AUTO)->save("{$directory}/{$filenameJPG}");
+			list($orig_width, $orig_height, $type) = getimagesize($file);
+			$coalesce = "{$directory}/{$arimId}_coalesce.gif";
+			exec("convert {$file} -coalesce {$coalesce}", $output);
+			foreach($size_image as $z){
+				/* $imagick = new Imagick($file);
+				$imagick = $imagick->coalesceImages();
+				$file_name = "{$arimId}_{$z[0]}x{$z[1]}.{$imageFileType}";
+				foreach ($imagick as $frames) {
+				  $frames->thumbnailImage($z[0], $z[1]);
+				  $frames->setImagePage($z[0], $z[1], 0, 0);
+				}
+				$imagick = $imagick->deconstructImages();
+				$imagick->writeImages("{$directory}/{$file_name}", true); */
+
+				$file_name = "{$arimId}_{$z[0]}x{$z[1]}.{$imageFileType}";
+				error_log("convert -size {$orig_width}x{$orig_height} {$coalesce} -resize {$z[0]}x{$z[1]} {$directory}/{$file_name}", 3, "./../temp/{$arimId}_{$z[0]}x{$z[1]}.sh");
+			}
+		}else{
+			$size_image[] = array(840, 576);
+			$size_image[] = array(683, 468);
+			foreach($size_image as $z){
+				$filename = "{$arimId}_{$z[0]}x{$z[1]}.{$imageFileType}";
+				Image::factory($file)
+					->resize($z[0], $z[1], Image::AUTO)
+					//->render(NULL, 60)
+					->save("{$directory}/{$filename}");
+			}
+		}
+		// Engine_Arsipimage::send_to_web($arimId);
+		// Engine_Library::send_to_web($arimId, $directory);
+		return $arimId;
+	}
+
+	public function action_delete() {
+
+		// ID Parameter
+		$id = $this->request->param('id');
+
+		// Get user id from session
+		$session = Session::instance();
+		$user_id = $session->get('adminId');
+
+		// Load Model News
+		$magazine_model = new Model_Magazine();
+
+		// Change status to 0
+		$magazine_model->delete_data_magazine($id);
+
+		// Redirect
+		$this->redirect('/magazine/search');
+
+	}
+
+}

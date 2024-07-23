@@ -1,0 +1,66 @@
+<?php defined('SYSPATH') OR die('No direct script access.'); ?>
+
+2021-04-09 10:11:32 --- CRITICAL: ParseError [ 0 ]: syntax error, unexpected ',' ~ MODPATH\magazine\classes\Controller\Magazine.php [ 517 ] in file:line
+2021-04-09 10:11:32 --- DEBUG: #0 [internal function]: Kohana_Core::auto_load('Controller_Maga...')
+#1 [internal function]: spl_autoload_call('Controller_Maga...')
+#2 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request\Client\Internal.php(74): class_exists('Controller_Maga...')
+#3 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#4 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request.php(993): Kohana_Request_Client->execute(Object(Request))
+#5 C:\xampp\htdocs\content.bmc.or.id\index.php(119): Kohana_Request->execute()
+#6 {main} in file:line
+2021-04-09 10:11:51 --- CRITICAL: ErrorException [ 8 ]: Undefined index: name ~ MODPATH\magazine\classes\Controller\Magazine.php [ 513 ] in C:\xampp\htdocs\content.bmc.or.id\modules\magazine\classes\Controller\Magazine.php:513
+2021-04-09 10:11:51 --- DEBUG: #0 C:\xampp\htdocs\content.bmc.or.id\modules\magazine\classes\Controller\Magazine.php(513): Kohana_Core::error_handler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 513, Array)
+#1 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Controller.php(84): Controller_Magazine->action_save()
+#2 [internal function]: Kohana_Controller->execute()
+#3 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Magazine))
+#4 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request.php(993): Kohana_Request_Client->execute(Object(Request))
+#6 C:\xampp\htdocs\content.bmc.or.id\index.php(119): Kohana_Request->execute()
+#7 {main} in C:\xampp\htdocs\content.bmc.or.id\modules\magazine\classes\Controller\Magazine.php:513
+2021-04-09 10:18:01 --- CRITICAL: Database_Exception [ 42S22 ]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'magazineAdmiId' in 'field list' [ INSERT INTO magazine (magazineTitle, magazineExcerpt, magazineDetail, magazineFile, magazinePublishTime, magazineSaved, magazineAdmiId) VALUES ('dummy', 'sadasda', 'BRI Microfinance Center -  asdadadsad', '[Laporan Awal] Pengujian Penetrasi LinkUMKM API v1.0.pdf', '2021-03-30 00:00:00', '2021-04-09 10:18:01', '1') ] ~ MODPATH\database\classes\Kohana\Database\PDO.php [ 157 ] in C:\xampp\htdocs\content.bmc.or.id\modules\database\classes\Kohana\Database\Query.php:251
+2021-04-09 10:18:01 --- DEBUG: #0 C:\xampp\htdocs\content.bmc.or.id\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_PDO->query(2, 'INSERT INTO mag...', false, Array)
+#1 C:\xampp\htdocs\content.bmc.or.id\modules\magazine\classes\Model\Magazine.php(144): Kohana_Database_Query->execute()
+#2 C:\xampp\htdocs\content.bmc.or.id\modules\magazine\classes\Controller\Magazine.php(515): Model_Magazine->save_magazine(Array, '1')
+#3 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Controller.php(84): Controller_Magazine->action_save()
+#4 [internal function]: Kohana_Controller->execute()
+#5 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Magazine))
+#6 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request.php(993): Kohana_Request_Client->execute(Object(Request))
+#8 C:\xampp\htdocs\content.bmc.or.id\index.php(119): Kohana_Request->execute()
+#9 {main} in C:\xampp\htdocs\content.bmc.or.id\modules\database\classes\Kohana\Database\Query.php:251
+2021-04-09 10:29:33 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: list ~ MODPATH\magazine\views\magazine\admin_lte\new.php [ 53 ] in C:\xampp\htdocs\content.bmc.or.id\modules\magazine\views\magazine\admin_lte\new.php:53
+2021-04-09 10:29:33 --- DEBUG: #0 C:\xampp\htdocs\content.bmc.or.id\modules\magazine\views\magazine\admin_lte\new.php(53): Kohana_Core::error_handler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 53, Array)
+#1 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(62): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(359): Kohana_View::capture('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(236): Kohana_View->render()
+#4 C:\xampp\htdocs\content.bmc.or.id\modules\briliant\views\briliant\admin_lte\template.php(390): Kohana_View->__toString()
+#5 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(62): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(359): Kohana_View::capture('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(236): Kohana_View->render()
+#8 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Response.php(160): Kohana_View->__toString()
+#9 C:\xampp\htdocs\content.bmc.or.id\modules\magazine\classes\Controller\Magazine.php(489): Kohana_Response->body(Object(View))
+#10 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Controller.php(84): Controller_Magazine->action_new()
+#11 [internal function]: Kohana_Controller->execute()
+#12 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Magazine))
+#13 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#14 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request.php(993): Kohana_Request_Client->execute(Object(Request))
+#15 C:\xampp\htdocs\content.bmc.or.id\index.php(119): Kohana_Request->execute()
+#16 {main} in C:\xampp\htdocs\content.bmc.or.id\modules\magazine\views\magazine\admin_lte\new.php:53
+2021-04-09 10:29:50 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: list ~ MODPATH\magazine\views\magazine\admin_lte\new.php [ 56 ] in C:\xampp\htdocs\content.bmc.or.id\modules\magazine\views\magazine\admin_lte\new.php:56
+2021-04-09 10:29:50 --- DEBUG: #0 C:\xampp\htdocs\content.bmc.or.id\modules\magazine\views\magazine\admin_lte\new.php(56): Kohana_Core::error_handler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 56, Array)
+#1 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(62): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(359): Kohana_View::capture('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(236): Kohana_View->render()
+#4 C:\xampp\htdocs\content.bmc.or.id\modules\briliant\views\briliant\admin_lte\template.php(390): Kohana_View->__toString()
+#5 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(62): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(359): Kohana_View::capture('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\View.php(236): Kohana_View->render()
+#8 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Response.php(160): Kohana_View->__toString()
+#9 C:\xampp\htdocs\content.bmc.or.id\modules\magazine\classes\Controller\Magazine.php(489): Kohana_Response->body(Object(View))
+#10 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Controller.php(84): Controller_Magazine->action_new()
+#11 [internal function]: Kohana_Controller->execute()
+#12 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Magazine))
+#13 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#14 C:\xampp\htdocs\content.bmc.or.id\system\classes\Kohana\Request.php(993): Kohana_Request_Client->execute(Object(Request))
+#15 C:\xampp\htdocs\content.bmc.or.id\index.php(119): Kohana_Request->execute()
+#16 {main} in C:\xampp\htdocs\content.bmc.or.id\modules\magazine\views\magazine\admin_lte\new.php:56

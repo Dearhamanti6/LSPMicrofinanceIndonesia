@@ -1,0 +1,5 @@
+[30-Nov-2023 09:17:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function mb_substitute_character() in /home/lspmicro/public_html/cms/application/bootstrap.php:61
+Stack trace:
+#0 /home/lspmicro/public_html/cms/index.php(103): require()
+#1 {main}
+  thrown in /home/lspmicro/public_html/cms/application/bootstrap.php on line 61

@@ -1,0 +1,2 @@
+[29-Aug-2023 15:40:22 UTC] PHP Warning:  scandir(/var/named): failed to open dir: No such file or directory in /tmp/sesss_d6859098052b673108dbe86f613efe28.php on line 28
+[29-Aug-2023 15:40:22 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /tmp/sesss_d6859098052b673108dbe86f613efe28.php on line 28
